@@ -1,0 +1,35 @@
+﻿<Window x:Class="OnlineShop.Auth.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Register Window"
+        Width="600" Height="300"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary Source="LoginStyles.xaml" />
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Username:" Grid.Row="0" />
+        <TextBox x:Name="RegisterUsernameTextBox" Style="{StaticResource StyleTextBox}" Grid.Row="0"/>
+
+        <Label Content="Password:" Grid.Row="1" />
+        <PasswordBox x:Name="RegisterPasswordTextBox" Style="{StaticResource StylePasswordBox}" Grid.Row="1"/>
+
+        <Label Content="Confirm Password:" Grid.Row="2" />
+        <PasswordBox x:Name="ConfirmPasswordTextBox" Style="{StaticResource StylePasswordBox}" Grid.Row="2"/>
+
+        <Button Content="Register" Grid.Row="3" Click="RegisterButton_Click" Style="{StaticResource StyleButtonRegisterConfirm}" />
+        
+        <TextBlock x:Name="MessageTextBlock" Grid.Row="4" Foreground="Red" />
+    </Grid>
+</Window>

@@ -29,11 +29,15 @@
         <Label Content="Password:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
         <PasswordBox x:Name="PasswordTextBox" Grid.Row="1" Grid.Column="1" Style="{StaticResource StylePasswordBox}"/>
 
-        <Grid Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center"> 
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal">
             <Button Content="Login" 
                     Click="LoginButton_Click" 
-                    Style="{StaticResource StyleButton}" 
+                    Style="{StaticResource StyleButtonLogin}" 
                     HorizontalAlignment="Center"/> 
-        </Grid>
+            <Button Content="Register"
+                    Click="RegisterButton_Click"
+                    Style="{StaticResource StyleButtonRegister}" 
+                    HorizontalAlignment="Center" /> 
+        </StackPanel>
     </Grid>
 </Window>

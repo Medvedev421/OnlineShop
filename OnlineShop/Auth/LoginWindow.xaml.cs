@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Linq;
+using System.Windows;
+using Newtonsoft.Json;
 
 namespace OnlineShop.Auth
 {
@@ -13,8 +16,8 @@ namespace OnlineShop.Auth
         {
             string username = UsernameTextBox.Text;
             string password = PasswordTextBox.Password;
-            
-            if (username == "admin" && password == "password")
+
+            if (ValidateUser(username, password))
             {
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
@@ -22,8 +25,31 @@ namespace OnlineShop.Auth
             }
             else
             {
-                MessageBox.Show("Invalid credentials. Please try again.");
+                MessageBox.Show("Неверные данные. Попробуйте еще раз.");
             }
+        }
+
+        private bool ValidateUser(string username, string password)
+        {
+            var userCollection = LoadUserData();
+            return userCollection.Users.Any(u => u.Username == username && u.Password == password);
+        }
+
+        private UserCollection LoadUserData()
+        {
+            if (!File.Exists("UserData.json"))
+            {
+                return new UserCollection();
+            }
+            var json = File.ReadAllText("UserData.json");
+            return JsonConvert.DeserializeObject<UserCollection>(json) ?? new UserCollection();
+        }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow registerWindow = new RegisterWindow();
+            this.Close();
+            registerWindow.Show();
         }
     }
 }
