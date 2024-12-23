@@ -1,0 +1,39 @@
+﻿<Window x:Class="OnlineShop.Auth.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:OnlineShop.Auth"
+        Title="Login Window" 
+        Width="600" Height="300"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary Source="LoginStyles.xaml" />
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/> 
+            <RowDefinition Height="Auto"/> 
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Username:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="UsernameTextBox" Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBox}"/>
+
+        <Label Content="Password:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+        <PasswordBox x:Name="PasswordTextBox" Grid.Row="1" Grid.Column="1" Style="{StaticResource StylePasswordBox}"/>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center"> 
+            <Button Content="Login" 
+                    Click="LoginButton_Click" 
+                    Style="{StaticResource StyleButton}" 
+                    HorizontalAlignment="Center"/> 
+        </Grid>
+    </Grid>
+</Window>
