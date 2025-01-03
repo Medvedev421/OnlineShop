@@ -13,7 +13,7 @@ namespace OnlineShop.Auth
             InitializeComponent();
         }
 
-        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        private void RegisterButton_Click(object sender, RoutedEventArgs e) 
         {
             string username = RegisterUsernameTextBox.Text;
             string password = RegisterPasswordTextBox.Password;

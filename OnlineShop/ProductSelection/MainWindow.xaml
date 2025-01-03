@@ -1,0 +1,65 @@
+﻿<Window x:Class="OnlineShop.ProductSelection.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Online Market" 
+        Height="450" Width="800">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MainWindowStyles.xaml"/> <!-- Ваш файл стилей -->
+            </ResourceDictionary.MergedDictionaries>
+
+            <Storyboard x:Key="ExpandMenuStoryboard">
+                <DoubleAnimation Storyboard.TargetName="CategoryBorder"
+                                 Storyboard.TargetProperty="Width"
+                                 To="150" Duration="0:0:0.3"/>
+            </Storyboard>
+            <Storyboard x:Key="CollapseMenuStoryboard">
+                <DoubleAnimation Storyboard.TargetName="CategoryBorder"
+                                 Storyboard.TargetProperty="Width"
+                                 To="30" Duration="0:0:0.3"/>
+            </Storyboard>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>  <!-- Панель категорий -->
+            <ColumnDefinition Width="*"/>    <!-- Основное содержимое -->
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Для кнопки корзины -->
+            <RowDefinition Height="*"/>    <!-- Основное содержимое -->
+        </Grid.RowDefinitions>
+
+        <!-- Панель для кнопки корзины -->
+        <Grid Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button x:Name="CartButton" Width="35" Height="35" 
+                    Click="CartButton_Click" Background="Transparent" BorderBrush="Transparent">
+                <Image Source="Cart.png" Stretch="Uniform"/>
+            </Button>
+        </Grid>
+
+        <!-- Оберните StackPanel в Border для выдвижения -->
+        <Border x:Name="CategoryBorder" Width="30" Background="Transparent" 
+                MouseEnter="CategoryPanel_MouseEnter" MouseLeave="CategoryPanel_MouseLeave"
+                VerticalAlignment="Stretch" Grid.RowSpan="2">
+            <StackPanel>
+                <Button Content="Обувь" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Shoes"/>
+                <Button Content="Джинсы" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Jeans"/>
+                <Button Content="Куртки" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Jackets"/>
+                <Button Content="Кофты" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Sweaters"/>
+                <Button Content="Футболки" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="T-Shirts"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Область для отображения товаров -->
+        <ScrollViewer Grid.Column="1" Margin="10" Grid.Row="1">
+            <WrapPanel x:Name="ProductPanel">
+                <!-- Здесь будут добавляться карточки товаров -->
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

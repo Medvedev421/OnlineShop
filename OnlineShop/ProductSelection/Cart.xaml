@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="OnlineShop.ProductSelection.Cart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="300" Height="400">
+    
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Корзина" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
+            <ItemsControl x:Name="ItemsList" />
+            <TextBlock x:Name="TotalPrice" FontWeight="Bold" FontSize="16" Margin="0,10,0,0" HorizontalAlignment="Right"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

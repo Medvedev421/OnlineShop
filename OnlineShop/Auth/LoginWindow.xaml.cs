@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows;
 using Newtonsoft.Json;
+using OnlineShop.ProductSelection;
 
 namespace OnlineShop.Auth
 {
