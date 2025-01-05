@@ -5,11 +5,11 @@
     <Grid Margin="5">
         <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Background="White">
             <StackPanel>
-                <Image x:Name="ProductImage" Width="130" Height="130" Stretch="Uniform" 
+                <Image x:Name="ProductImage" Width="130" Height="130" Stretch="Uniform"
                        VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                <TextBlock x:Name="ProductName" FontWeight="Bold" HorizontalAlignment="Center" 
+                <TextBlock x:Name="ProductName" FontWeight="Bold" HorizontalAlignment="Center"
                            Margin="5,5,5,0"/>
-                <TextBlock x:Name="ProductPrice" FontStyle="Italic" HorizontalAlignment="Center" 
+                <TextBlock x:Name="ProductPrice" FontStyle="Italic" HorizontalAlignment="Center"
                            Margin="5,0,5,5"/>
             </StackPanel>
         </Border>
