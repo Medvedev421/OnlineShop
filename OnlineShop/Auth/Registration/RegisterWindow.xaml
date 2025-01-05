@@ -1,4 +1,4 @@
-﻿<Window x:Class="OnlineShop.Auth.RegisterWindow"
+﻿<Window x:Class="OnlineShop.Auth.Registration.RegisterWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Register Window"
@@ -6,7 +6,7 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-        <ResourceDictionary Source="LoginWindowStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/OnlineShop;component/Auth/LogIn/LoginWindowStyles.xaml" />
     </Window.Resources>
 
     <Grid Margin="20">

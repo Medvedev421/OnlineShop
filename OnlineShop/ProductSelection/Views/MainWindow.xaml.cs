@@ -4,16 +4,16 @@ using System.Windows.Media.Animation;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OnlineShop.ProductSelection
+namespace OnlineShop.ProductSelection.Views
 {
     public partial class MainWindow : Window
     {
-        private List<ProductCard> allProducts;
+        private List<Cards.ProductCard> allProducts;
 
         public MainWindow()
         {
             InitializeComponent();
-            allProducts = new List<ProductCard>();
+            allProducts = new List<Cards.ProductCard>();
             ShowProductList(); // Отображать список товаров при загрузке
         }
 
@@ -24,18 +24,18 @@ namespace OnlineShop.ProductSelection
 
             for (int i = 0; i < 5; i++)
             {
-                ProductCard card = new ProductCard();
+                Cards.ProductCard card = new Cards.ProductCard();
                 card.SetProduct("path/to/image.jpg", $"Товар {i + 1}", $"{(i + 1) * 100}₽");
                 ProductPanel.Children.Add(card);
                 allProducts.Add(card);
             }
         }
 
-        public void ShowProductDetails(ProductCard card)
+        public void ShowProductDetails(Cards.ProductCard card)
         {
             ProductPanel.Children.Clear(); // Очищаем панель товаров
 
-            var productDetails = new ProductDetails();
+            var productDetails = new Cards.ProductDetails();
             productDetails.SetProduct(
                 "path/to/image.jpg", // Укажите путь к изображению
                 card.ProductName.Text,
@@ -49,7 +49,7 @@ namespace OnlineShop.ProductSelection
         private void CartButton_Click(object sender, RoutedEventArgs e)
         {
             ProductPanel.Children.Clear(); // Очищаем панель товаров
-            var cart = new Cart();
+            var cart = new Carts.Cart();
             ProductPanel.Children.Add(cart);
             // Здесь можно обновить содержимое корзины, если это понадобится
         }
@@ -106,7 +106,7 @@ namespace OnlineShop.ProductSelection
 
             for (int i = 0; i < productCount; i++)
             {
-                ProductCard card = new ProductCard();
+                Cards.ProductCard card = new Cards.ProductCard();
                 card.SetProduct("path/to/image.jpg", $"{category} Товар {i + 1}", $"{(i + 1) * 100}₽");
                 ProductPanel.Children.Add(card);
                 allProducts.Add(card);

@@ -3,8 +3,10 @@ using System.Windows;
 using System.Linq;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using OnlineShop.Auth.LogIn;
+using OnlineShop.Auth.Models;
 
-namespace OnlineShop.Auth
+namespace OnlineShop.Auth.Registration
 {
     public partial class RegisterWindow : Window
     {
@@ -13,7 +15,7 @@ namespace OnlineShop.Auth
             InitializeComponent();
         }
 
-        private void RegisterButton_Click(object sender, RoutedEventArgs e) 
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             string username = RegisterUsernameTextBox.Text;
             string password = RegisterPasswordTextBox.Password;
@@ -69,16 +71,18 @@ namespace OnlineShop.Auth
         {
             var userCollection = LoadUserData();
             userCollection.Users.Add(new User { Username = username, Password = password });
-            File.WriteAllText("UserData.json", JsonConvert.SerializeObject(userCollection));
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\..\\Auth\\Registration", "UserData.json");
+            File.WriteAllText(filePath, JsonConvert.SerializeObject(userCollection));
         }
 
         private UserCollection LoadUserData()
         {
-            if (!File.Exists("UserData.json"))
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\..\\Auth\\Registration", "UserData.json");
+            if (!File.Exists(filePath))
             {
                 return new UserCollection();
             }
-            var json = File.ReadAllText("UserData.json");
+            var json = File.ReadAllText(filePath);
             return JsonConvert.DeserializeObject<UserCollection>(json) ?? new UserCollection();
         }
 

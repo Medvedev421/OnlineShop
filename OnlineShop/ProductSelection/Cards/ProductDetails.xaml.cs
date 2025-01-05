@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
-namespace OnlineShop.ProductSelection
+namespace OnlineShop.ProductSelection.Cards
 {
     public partial class ProductDetails : UserControl
     {
@@ -32,7 +32,7 @@ namespace OnlineShop.ProductSelection
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             // Логика возврата — нужно вызвать метод в MainWindow, чтобы вернуться к списку товаров
-            ((MainWindow)Window.GetWindow(this)).ShowProductList();
+            ((Views.MainWindow)Window.GetWindow(this)).ShowProductList();
         }
     }
 }

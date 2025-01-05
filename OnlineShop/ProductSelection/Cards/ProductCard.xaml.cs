@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
-namespace OnlineShop.ProductSelection
+namespace OnlineShop.ProductSelection.Cards
 {
     public partial class ProductCard : UserControl
     {
@@ -18,7 +18,7 @@ namespace OnlineShop.ProductSelection
             if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
             {
                 // Запуск отображения полной информации
-                ((MainWindow)Window.GetWindow(this)).ShowProductDetails(this);
+                ((Views.MainWindow)Window.GetWindow(this)).ShowProductDetails(this);
             }
         }
 

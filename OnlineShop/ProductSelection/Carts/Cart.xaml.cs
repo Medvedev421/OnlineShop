@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace OnlineShop.ProductSelection
+namespace OnlineShop.ProductSelection.Carts
 {
     public partial class Cart : UserControl
     {

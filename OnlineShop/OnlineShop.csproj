@@ -14,17 +14,45 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Page Update="Auth\RegisterWindow.xaml">
+      <Page Update="ProductSelection\Views\MainWindow.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
       </Page>
-      <Page Update="ProductSelection\MainWindow.xaml">
+      <Page Update="ProductSelection\Cards\ProductCard.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
       </Page>
-      <Page Update="ProductSelection\MainWindowStyles.xaml">
+      <Page Update="ProductSelection\Cards\ProductDetails.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="ProductSelection\Carts\Cart.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="ProductSelection\Resources\MainWindowStyles.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="ProductSelection\Views\MainWindowStyles.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
+      <Page Update="Auth\LogIn\LoginWindow.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Auth\LogIn\LoginWindowStyles.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Auth\Registration\RegisterWindow.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
@@ -33,12 +61,14 @@
 
     <ItemGroup>
       <None Remove="Auth\UserData.json" />
-      <Content Include="Auth\UserData.json" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="ProductSelection\Cart.png" />
-      <Resource Include="ProductSelection\Cart.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="ProductSelection\Resource\Cart.png" />
     </ItemGroup>
 
 </Project>

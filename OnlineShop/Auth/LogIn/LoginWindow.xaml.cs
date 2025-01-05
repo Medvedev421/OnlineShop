@@ -2,9 +2,11 @@
 using System.Linq;
 using System.Windows;
 using Newtonsoft.Json;
-using OnlineShop.ProductSelection;
+using OnlineShop.ProductSelection.Views;
+using OnlineShop.Auth.Models;
+using OnlineShop.Auth.Registration;
 
-namespace OnlineShop.Auth
+namespace OnlineShop.Auth.LogIn
 {
     public partial class LoginWindow : Window
     {
@@ -38,11 +40,12 @@ namespace OnlineShop.Auth
 
         private UserCollection LoadUserData()
         {
-            if (!File.Exists("UserData.json"))
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\..\\Auth\\Registration", "UserData.json");
+            if (!File.Exists(filePath))
             {
                 return new UserCollection();
             }
-            var json = File.ReadAllText("UserData.json");
+            var json = File.ReadAllText(filePath);
             return JsonConvert.DeserializeObject<UserCollection>(json) ?? new UserCollection();
         }
 
