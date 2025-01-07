@@ -15,18 +15,20 @@
         <Setter Property="Margin" Value="0,20,10,0"/> <!-- Отступ для выравнивания -->
     </Style>
 
-    <!-- Стиль для кнопки -->
+    <!-- Стиль для кнопки входа -->
     <Style x:Key="StyleButtonLogin" TargetType="Button">
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="100"/>
     </Style>
     
+    <!-- Стиль для кнопки регистрации -->
     <Style x:Key="StyleButtonRegister" TargetType="Button">
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="100"/>
         <Setter Property="Margin" Value="10,0,0,0"/>
     </Style>
-    
+
+    <!-- Стиль для кнопки подтверждения регистрации -->
     <Style x:Key="StyleButtonRegisterConfirm" TargetType="Button">
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="100"/>

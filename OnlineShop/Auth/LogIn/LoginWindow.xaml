@@ -37,7 +37,7 @@
             <Button Content="Register"
                     Click="RegisterButton_Click"
                     Style="{StaticResource StyleButtonRegister}"
-                    HorizontalAlignment="Center" />
+                    HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Window>
