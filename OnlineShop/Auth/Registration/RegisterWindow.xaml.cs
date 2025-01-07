@@ -3,18 +3,27 @@ using System.Windows;
 using System.Linq;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using MahApps.Metro.Controls;
 using OnlineShop.Auth.LogIn;
 using OnlineShop.Auth.Models;
 
 namespace OnlineShop.Auth.Registration
 {
-    public partial class RegisterWindow : Window
+    public partial class RegisterWindow : MetroWindow
     {
         public RegisterWindow()
         {
             InitializeComponent();
         }
-
+        
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Обработка возврата на страницу входа
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+        }
+        
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             string username = RegisterUsernameTextBox.Text;

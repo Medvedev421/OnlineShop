@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Windows;
+using MahApps.Metro.Controls;
 using Newtonsoft.Json;
 using OnlineShop.ProductSelection.Views;
 using OnlineShop.Auth.Models;
@@ -8,7 +9,7 @@ using OnlineShop.Auth.Registration;
 
 namespace OnlineShop.Auth.LogIn
 {
-    public partial class LoginWindow : Window
+    public partial class LoginWindow : MetroWindow 
     {
         public LoginWindow()
         {

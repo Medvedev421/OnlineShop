@@ -7,7 +7,7 @@ using MahApps.Metro.Controls;
 
 namespace OnlineShop.ProductSelection.Views
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         private List<Cards.ProductCard> allProducts;
 
