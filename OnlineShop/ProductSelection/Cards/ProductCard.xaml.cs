@@ -24,7 +24,17 @@ namespace OnlineShop.ProductSelection.Cards
 
         public void SetProduct(string imagePath, string name, string price)
         {
-            ProductImage.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
+            // Устанавливаем изображение только если путь не равен null
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                ProductImage.Source = new BitmapImage(new Uri("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/Cart.png"));
+            }
+            else
+            {
+                // Здесь можно установить заглушку или оставить пустым
+                ProductImage.Source = null; // Оставляем пустым, если изображения нет
+            }
+
             ProductName.Text = name;
             ProductPrice.Text = price;
         }

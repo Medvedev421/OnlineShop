@@ -10,6 +10,7 @@ namespace OnlineShop.ProductSelection.Views
     public partial class MainWindow : MetroWindow
     {
         private List<Cards.ProductCard> allProducts;
+        private Carts.Cart currentCart;
 
         public MainWindow()
         {
@@ -46,13 +47,21 @@ namespace OnlineShop.ProductSelection.Views
 
             ProductPanel.Children.Add(productDetails);
         }
-
+        
+        public Carts.Cart GetCart()
+        {
+            if (currentCart == null)
+            {
+                currentCart = new Carts.Cart();
+            }
+            return currentCart;
+        }
+        
         private void CartButton_Click(object sender, RoutedEventArgs e)
         {
             ProductPanel.Children.Clear(); // Очищаем панель товаров
             var cart = new Carts.Cart();
             ProductPanel.Children.Add(cart);
-            // Здесь можно обновить содержимое корзины, если это понадобится
         }
 
         private void CategoryPanel_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)

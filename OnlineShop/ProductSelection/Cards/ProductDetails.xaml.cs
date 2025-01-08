@@ -65,10 +65,24 @@ namespace OnlineShop.ProductSelection.Cards
 
         private void AddToCartButton_Click(object sender, RoutedEventArgs e)
         {
-            // Здесь необходимо добавить товар в корзину
-            // Например, вызываем метод для добавления в корзину
-            MessageBox.Show($"{ProductName.Text} (Размер: {selectedSize}) добавлен в корзину!");
-            // Логика добавления товара в корзину
+            if (selectedSize != null)
+            {
+                var mainWindow = (Views.MainWindow)Window.GetWindow(this);
+
+                // Создаем новую карточку товара
+                Cards.ProductCard cartItem = new Cards.ProductCard();
+                cartItem.SetProduct(ProductImage.Source?.ToString(), ProductName.Text, ProductPrice.Text);
+
+                // Добавляем карточку товара в корзину
+                var cart = mainWindow.GetCart();
+                cart.AddProductToCart(cartItem);
+
+                MessageBox.Show($"{ProductName.Text} (Размер: {selectedSize}) добавлен в корзину!");
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, выберите размер!");
+            }
         }
     }
 }
