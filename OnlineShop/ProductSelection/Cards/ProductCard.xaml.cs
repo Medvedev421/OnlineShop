@@ -13,6 +13,7 @@ namespace OnlineShop.ProductSelection.Cards
             this.MouseDown += ProductCard_MouseDown; // Добавьте обработчик событий
         }
 
+
         private void ProductCard_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
@@ -22,21 +23,20 @@ namespace OnlineShop.ProductSelection.Cards
             }
         }
 
-        public void SetProduct(string imagePath, string name, string price)
+        public void SetProduct(Product product)
         {
-            // Устанавливаем изображение только если путь не равен null
-            if (!string.IsNullOrEmpty(imagePath))
+            if (!string.IsNullOrEmpty(product.ImagePath))
             {
-                ProductImage.Source = new BitmapImage(new Uri("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/Cart.png"));
+                ProductImage.Source = new BitmapImage(new Uri(product.ImagePath, UriKind.Relative));
             }
             else
             {
-                // Здесь можно установить заглушку или оставить пустым
-                ProductImage.Source = null; // Оставляем пустым, если изображения нет
+                ProductImage.Source = null;
             }
 
-            ProductName.Text = name;
-            ProductPrice.Text = price;
+            ProductName.Text = product.Name;
+            ProductPrice.Text = product.Price;
+            // Дополнительно можно отобразить категорию, если требуется
         }
     }
 }
