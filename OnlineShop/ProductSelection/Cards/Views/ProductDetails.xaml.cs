@@ -60,8 +60,8 @@ namespace OnlineShop.ProductSelection.Cards
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            // Логика возврата — нужно вызвать метод в MainWindow, чтобы вернуться к списку товаров
-            ((Views.MainWindow)Window.GetWindow(this)).ShowProductList();
+            var mainWindow = (Views.MainWindow)Window.GetWindow(this);
+            mainWindow.ProductManager.ShowProductList(); // Здесь вызываем метод
         }
 
         private void AddToCartButton_Click(object sender, RoutedEventArgs e)

@@ -69,7 +69,7 @@ Background="MintCream">
 
     <!-- Область для отображения товаров -->
     <ScrollViewer Grid.Column="1" Margin="10" Grid.Row="2">
-        <WrapPanel x:Name="ProductPanel">
+        <WrapPanel  x:Name="ProductPanel">
             <!-- Здесь будут добавляться карточки товаров -->
         </WrapPanel>
     </ScrollViewer>
