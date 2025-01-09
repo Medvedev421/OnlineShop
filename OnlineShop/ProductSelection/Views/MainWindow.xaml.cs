@@ -65,14 +65,13 @@ namespace OnlineShop.ProductSelection.Views
             {
                 currentCart = new Carts.Cart();
             }
-
             return currentCart;
         }
 
         private void CartButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductPanel.Children.Clear(); // Очищаем панель товаров
-            var cart = new Carts.Cart();
+            ProductPanel.Children.Clear();
+            var cart = GetCart(); // Получаем текущую корзину
             ProductPanel.Children.Add(cart);
         }
 

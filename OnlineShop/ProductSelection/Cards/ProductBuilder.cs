@@ -9,6 +9,7 @@ namespace OnlineShop.ProductSelection.Cards
         private string _price;
         private string _category;
 
+
         public ProductBuilder SetImage(string imagePath)
         {
             _imagePath = imagePath;

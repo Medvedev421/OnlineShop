@@ -7,6 +7,7 @@
         public string Price { get; set; }
         public string Category { get; set; }
 
+
         public Product(string imagePath, string name, string price, string category)
         {
             ImagePath = imagePath;
