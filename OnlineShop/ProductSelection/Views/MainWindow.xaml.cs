@@ -63,21 +63,21 @@ namespace OnlineShop.ProductSelection.Views
                 switch (category)
                 {
                     case "Shoes":
-                        productManager.AddShoesCard("path/to/shoes/image1.jpg", "Кроссовки", "400₽");
-                        productManager.AddShoesCard("path/to/shoes/image2.jpg", "Ботинки", "800₽");
+                        productManager.AddShoesCard("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Кроссовки", "400₽");
+                        productManager.AddShoesCard("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Ботинки", "800₽");
                         break;
                     case "Jeans":
-                        productManager.AddJeansCard("path/to/jeans/image1.jpg", "Джинсы", "1000₽");
-                        productManager.AddJeansCard("path/to/jeans/image2.jpg", "Классические джинсы", "1200₽");
+                        productManager.AddJeansCard("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Джинсы", "1000₽");
+                        productManager.AddJeansCard("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Классические джинсы", "1200₽");
                         break;
                     case "Jackets":
-                        productManager.AddJacketsCard("path/to/jackets/image1.jpg", "Куртка", "2500₽");
+                        productManager.AddJacketsCard("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Куртка", "2500₽");
                         break;
                     case "Sweaters":
-                        productManager.AddSweatersCard("path/to/sweaters/image1.jpg", "Теплый свитер", "1500₽");
+                        productManager.AddSweatersCard("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Теплый свитер", "1500₽");
                         break;
                     case "T-Shirts":
-                        productManager.AddTShirtsCard("path/to/tshirts/image1.jpg", "Футболка", "500₽");
+                        productManager.AddTShirtsCard("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Футболка", "500₽");
                         break;
                 }
             }
@@ -89,7 +89,7 @@ namespace OnlineShop.ProductSelection.Views
 
             var productDetails = new ProductDetails();
             productDetails.SetProduct(
-                "path/to/image.jpg", // Укажите путь к изображению
+                card.ImagePath, // Укажите путь к изображению
                 card.ProductName.Text,
                 card.ProductPrice.Text,
                 new[] { "XS", "S", "M", "L", "XL" } // Укажите размеры

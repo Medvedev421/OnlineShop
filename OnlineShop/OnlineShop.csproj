@@ -73,7 +73,21 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Resource Include="ProductSelection\Resource\Cart.png" />
+      <None Remove="ProductSelection\Carts\Images\Cart.png" />
+      <None Remove="ProductSelection\Carts\Images\Snils.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ProductSelection\Resource\JacketsImage\" />
+      <Folder Include="ProductSelection\Resource\JeansImage\" />
+      <Folder Include="ProductSelection\Resource\ShoesImage\" />
+      <Folder Include="ProductSelection\Resource\SweatersImage\" />
+      <Folder Include="ProductSelection\Resource\T-ShirtsImage\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="ProductSelection\Resource\CartImage\Cart.png" />
+      <None Remove="ProductSelection\Resource\JacketsImage\Snils.jpg" />
     </ItemGroup>
 
 </Project>

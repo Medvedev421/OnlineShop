@@ -50,7 +50,7 @@ Background="MintCream">
     <Grid Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
         <Button x:Name="CartButton" Width="35" Height="35"
                 Click="CartButton_Click" Background="Transparent" BorderBrush="Transparent">
-            <Image Source="pack://application:,,,/OnlineShop;component/ProductSelection/Resource/Cart.png" Stretch="Uniform"/>
+            <Image Source="pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png" Stretch="Uniform"/>
         </Button>
     </Grid>
 

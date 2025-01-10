@@ -39,15 +39,14 @@ namespace OnlineShop.ProductSelection.Managers
         
         private List<Cards.Product> allAvailableProducts = new List<Cards.Product>
         {
-            new Cards.Product("path/to/shoes/image1.jpg", "Кроссовки", "400₽", "Shoes"),
-            new Cards.Product("path/to/shoes/image2.jpg", "Ботинки", "800₽", "Shoes"),
-            new Cards.Product("path/to/jeans/image1.jpg", "Джинсы", "1000₽", "Jeans"),
-            new Cards.Product("path/to/jeans/image2.jpg", "Классические джинсы", "1200₽", "Jeans"),
-            new Cards.Product("path/to/jackets/image1.jpg", "Куртка", "2500₽", "Jackets"),
-            new Cards.Product("path/to/jackets/image2.jpg", "Легкая куртка", "2000₽", "Jackets"),
-            new Cards.Product("path/to/sweaters/image1.jpg", "Теплый свитер", "1500₽", "Sweaters"),
-            new Cards.Product("path/to/tshirts/image1.jpg", "Футболка", "500₽", "T-Shirts"),
-            // Добавьте другие товары по мере необходимости
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Кроссовки", "400₽", "Shoes"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Ботинки", "800₽", "Shoes"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Джинсы", "1000₽", "Jeans"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Классические джинсы", "1200₽", "Jeans"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Куртка", "2500₽", "Jackets"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Легкая куртка", "2000₽", "Jackets"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Теплый свитер", "1500₽", "Sweaters"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Футболка", "500₽", "T-Shirts"),
         };
 
         public void AddProductCard(string imagePath, string name, string price, string category)

@@ -8,6 +8,7 @@ namespace OnlineShop.ProductSelection.Cards
 {
     public partial class ProductCard : UserControl
     {
+        public string ImagePath { get; private set; }
         public ProductCard()
         {
             InitializeComponent();
@@ -27,8 +28,10 @@ namespace OnlineShop.ProductSelection.Cards
         public void SetProduct(Product product)
         {
             if (!string.IsNullOrEmpty(product.ImagePath))
-            {
-                ProductImage.Source = new BitmapImage(new Uri(product.ImagePath, UriKind.Relative));
+            { 
+                ImagePath = product.ImagePath;
+                
+                ProductImage.Source = new BitmapImage(new Uri(ImagePath, UriKind.Absolute));
             }
             else
             {
@@ -37,7 +40,6 @@ namespace OnlineShop.ProductSelection.Cards
 
             ProductName.Text = product.Name;
             ProductPrice.Text = product.Price;
-            // Дополнительно можно отобразить категорию, если требуется
         }
     }
 }

@@ -17,7 +17,25 @@ namespace OnlineShop.ProductSelection.Cards
 
         public void SetProduct(string imagePath, string name, string price, string[] sizes)
         {
-            ProductImage.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
+            if (!string.IsNullOrWhiteSpace(imagePath)) // Проверка на null или пустую строку
+            {
+                try
+                {
+                    // Используйте правильный UriKind в зависимости от того, как вы передаете путь
+                    ProductImage.Source = new BitmapImage(new Uri(imagePath, UriKind.RelativeOrAbsolute));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка загрузки изображения: {ex.Message}");
+                    ProductImage.Source = null; // Установите изображение по умолчанию
+                }
+            }
+            else
+            {
+                MessageBox.Show("Путь к изображению не может быть пустым.");
+                ProductImage.Source = null; // Установите изображение по умолчанию
+            }
+
             ProductName.Text = name;
             ProductPrice.Text = price;
 
