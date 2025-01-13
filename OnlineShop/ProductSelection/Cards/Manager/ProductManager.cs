@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using OnlineShop.ProductSelection.Cards;
 
-namespace OnlineShop.ProductSelection.Managers
+namespace OnlineShop.ProductSelection.Cards.Managers
 {
     public class ProductManager
     {
@@ -49,6 +49,10 @@ namespace OnlineShop.ProductSelection.Managers
             new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/T-ShirtsImage/Tshirt.png", "Футболка мужская", "1999₽", "T-Shirts"),
         };
 
+        public List<Cards.Product> GetAllAvailableProducts()
+        {
+            return allAvailableProducts;
+        }
         public void AddProductCard(string imagePath, string name, string price, string category)
         {
             var card = new ProductBuilder()

@@ -2,6 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=System.Runtime">
 
+    <!-- Стиль для панели строки поиска -->
+    <Style x:Key="SearchPanelStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Margin" Value="0,10,0,0"/> <!-- Margin для панели поиска -->
+    </Style>
+
     <!-- Стиль для кнопок категорий -->
     <Style x:Key="CategoryButtonStyle" TargetType="Button">
         <Setter Property="Height" Value="40"/>
@@ -21,7 +30,6 @@
                                  Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  BorderThickness="0" Background="Transparent"/>
                         <TextBlock x:Name="PlaceholderTextBlock"
-                                   Text="Поиск..."
                                    Foreground="Gray"
                                    IsHitTestVisible="False"
                                    VerticalAlignment="Center"

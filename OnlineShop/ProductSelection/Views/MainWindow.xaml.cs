@@ -1,9 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
 using MahApps.Metro.Controls;
 using OnlineShop.ProductSelection.Cards;
-using OnlineShop.ProductSelection.Managers;
+using OnlineShop.ProductSelection.Cards.Managers;
 
 namespace OnlineShop.ProductSelection.Views
 {
@@ -101,14 +102,45 @@ namespace OnlineShop.ProductSelection.Views
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (SearchBox == null) return;
+            
             string searchText = SearchBox.Text.ToLower();
-            ProductPanel.Children.Clear();
+            ProductPanel.Children.Clear(); // Убираем все текущие карточки
+            
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                // Если строка поиска пуста, вызываем метод, чтобы показать случайные товары
+                productManager.ShowProductList();
+                return;
+            }
+            
+            // Набор для хранения уникальных карточек
+            HashSet<string> addedProducts = new HashSet<string>();
 
+            // Ищем по всем доступным товарам
+            foreach (var product in productManager.GetAllAvailableProducts())
+            {
+                if (product.Name.ToLower().Contains(searchText) && !addedProducts.Contains(product.Name))
+                {
+                    var card = new ProductBuilder()
+                        .SetImage(product.ImagePath)
+                        .SetName(product.Name)
+                        .SetPrice(product.Price)
+                        .SetCategory(product.Category)
+                        .CreateProductCard();
+
+                    ProductPanel.Children.Add(card);
+                    addedProducts.Add(product.Name); // Добавляем название продукта в набор, чтобы избежать дубликатов
+                }
+            }
+
+            // Ищем по всем уже добавленным товарам
             foreach (var product in productManager.GetAllProducts())
             {
-                if (product.ProductName.Text.ToLower().Contains(searchText))
+                if (product.ProductName.Text.ToLower().Contains(searchText) && !addedProducts.Contains(product.ProductName.Text))
                 {
                     ProductPanel.Children.Add(product);
+                    addedProducts.Add(product.ProductName.Text); // Добавляем название продукта в набор
                 }
             }
         }
@@ -117,7 +149,7 @@ namespace OnlineShop.ProductSelection.Views
         {
             if (SearchBox.Text == "Поиск...")
             {
-                SearchBox.Text = string.Empty;
+                SearchBox.Text = ""; // Очищаем текст при получении фокуса
             }
         }
 
@@ -125,7 +157,7 @@ namespace OnlineShop.ProductSelection.Views
         {
             if (string.IsNullOrWhiteSpace(SearchBox.Text))
             {
-                SearchBox.Text = "Поиск...";
+                SearchBox.Text = "Поиск..."; // Восстанавливаем текст при потере фокуса
             }
         }
     }

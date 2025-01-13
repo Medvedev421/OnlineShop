@@ -80,6 +80,7 @@
     <ItemGroup>
       <Folder Include="ProductSelection\Resource\JacketsImage\" />
       <Folder Include="ProductSelection\Resource\JeansImage\" />
+      <Folder Include="ProductSelection\Resource\Lens\" />
       <Folder Include="ProductSelection\Resource\ShoesImage\" />
       <Folder Include="ProductSelection\Resource\SweatersImage\" />
       <Folder Include="ProductSelection\Resource\T-ShirtsImage\" />
@@ -111,6 +112,8 @@
       <Resource Include="ProductSelection\Resource\T-ShirtsImage\Tshirt.png" />
       <None Remove="ProductSelection\Resource\JacketsImage\Nike.png" />
       <Resource Include="ProductSelection\Resource\JacketsImage\Nike.png" />
+      <None Remove="ProductSelection\Resource\Lens\Lense.png" />
+      <Resource Include="ProductSelection\Resource\Lens\Lense.png" />
     </ItemGroup>
 
 </Project>
