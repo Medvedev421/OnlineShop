@@ -21,7 +21,7 @@ namespace OnlineShop.ProductSelection.Cards.Managers
             allProducts.Clear();
 
             Random random = new Random();
-            var selectedProducts = allAvailableProducts.OrderBy(x => random.Next()).Take(5); // Случайным образом берем 5 товаров
+            var selectedProducts = allAvailableProducts.OrderBy(x => random.Next()).Take(5); 
 
             foreach (var product in selectedProducts)
             {
@@ -30,10 +30,10 @@ namespace OnlineShop.ProductSelection.Cards.Managers
                     .SetName(product.Name)
                     .SetPrice(product.Price)
                     .SetCategory(product.Category)
-                    .CreateProductCard(); // Используйте CreateProductCard вместо Build
+                    .CreateProductCard(); 
 
                 productPanel.Children.Add(card);
-                allProducts.Add(card); // Добавляем карточку в список всех продуктов
+                allProducts.Add(card); 
             }
         }
         

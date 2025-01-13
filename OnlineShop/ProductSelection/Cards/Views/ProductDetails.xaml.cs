@@ -7,7 +7,7 @@ namespace OnlineShop.ProductSelection.Cards
 {
     public partial class ProductDetails : UserControl
     {
-        private string selectedSize = null; // Для хранения выбранного размера
+        private string selectedSize = null; 
 
 
         public ProductDetails()
@@ -17,23 +17,22 @@ namespace OnlineShop.ProductSelection.Cards
 
         public void SetProduct(string imagePath, string name, string price, string[] sizes)
         {
-            if (!string.IsNullOrWhiteSpace(imagePath)) // Проверка на null или пустую строку
+            if (!string.IsNullOrWhiteSpace(imagePath)) 
             {
                 try
                 {
-                    // Используйте правильный UriKind в зависимости от того, как вы передаете путь
                     ProductImage.Source = new BitmapImage(new Uri(imagePath, UriKind.RelativeOrAbsolute));
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Ошибка загрузки изображения: {ex.Message}");
-                    ProductImage.Source = null; // Установите изображение по умолчанию
+                    ProductImage.Source = null; 
                 }
             }
             else
             {
                 MessageBox.Show("Путь к изображению не может быть пустым.");
-                ProductImage.Source = null; // Установите изображение по умолчанию
+                ProductImage.Source = null; 
             }
 
             ProductName.Text = name;
@@ -46,10 +45,10 @@ namespace OnlineShop.ProductSelection.Cards
                 {
                     Content = size,
                     Margin = new Thickness(5),
-                    Tag = size // Хранит значение размера
+                    Tag = size 
                 };
 
-                sizeButton.Click += SizeButton_Click; // Добавляем обработчик клика
+                sizeButton.Click += SizeButton_Click;
                 SizePanel.Children.Add(sizeButton);
             }
         }
@@ -58,20 +57,17 @@ namespace OnlineShop.ProductSelection.Cards
         {
             if (sender is Button sizeButton)
             {
-                // Отменяем выделение других кнопок
                 foreach (var child in SizePanel.Children)
                 {
                     if (child is Button btn)
                     {
-                        btn.Background = Brushes.Transparent; // Сброс цвета фона
+                        btn.Background = Brushes.Transparent; 
                     }
                 }
-
-                // Устанавливаем выделение для текущей кнопки
+                
                 sizeButton.Background = Brushes.LightBlue;
-                selectedSize = sizeButton.Tag.ToString(); // Запоминаем выбранный размер
-
-                // Активируем кнопку "В корзину"
+                selectedSize = sizeButton.Tag.ToString(); 
+                
                 AddToCartButton.IsEnabled = true;
             }
         }
@@ -79,18 +75,16 @@ namespace OnlineShop.ProductSelection.Cards
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = (Views.MainWindow)Window.GetWindow(this);
-            mainWindow.ProductManager.ShowProductList(); // Здесь вызываем метод
+            mainWindow.ProductManager.ShowProductList(); 
         }
 
         private void AddToCartButton_Click(object sender, RoutedEventArgs e)
         {
             if (selectedSize != null)
             {
-                // Получаем текущую корзину из MainWindow
                 var mainWindow = (Views.MainWindow)Window.GetWindow(this);
                 var currentCart = mainWindow.GetCart();
-        
-                // Добавляем товар в корзину
+                
                 currentCart.AddItem(ProductName.Text, ProductPrice.Text);
         
                 MessageBox.Show($"{ProductName.Text} (Размер: {selectedSize}) добавлен в корзину!");

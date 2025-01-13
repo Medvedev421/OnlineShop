@@ -17,13 +17,12 @@
             <TextBlock x:Name="ProductPrice" FontStyle="Italic" FontSize="14" HorizontalAlignment="Center" Margin="0,0,0,10"/>
             <TextBlock Text="Sizes:" FontWeight="Bold"/>
             <StackPanel x:Name="SizePanel" Orientation="Horizontal" Margin="0,5,0,10">
-                <!-- Размеры будут добавлены динамически -->
+               
             </StackPanel>
-            <!-- Создаем Grid для кнопок -->
             <Grid Margin="0,5,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" /> <!-- Для кнопки Назад -->
-                    <ColumnDefinition Width="Auto" /> <!-- Для кнопки В корзину -->
+                    <ColumnDefinition Width="Auto" /> 
+                    <ColumnDefinition Width="Auto" /> 
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="BackButton" Content="Назад" Click="BackButton_Click" Width="100" Margin="0,0,10,0" Style="{StaticResource BackButtonStyle}"/> <!-- Кнопка Назад со стилем -->

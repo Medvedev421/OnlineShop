@@ -36,15 +36,15 @@ namespace OnlineShop.ProductSelection.Cards
 
         public Product Build()
         {
-            return new Product(_imagePath, _name, _price, _category); // Создаем продукт
+            return new Product(_imagePath, _name, _price, _category);
         }
 
         public ProductCard CreateProductCard()
         {
             var card = new ProductCard();
-            var product = Build(); // Создаем продукт
+            var product = Build(); 
 
-            card.SetProduct(product); // Устанавливаем продукт в карточку
+            card.SetProduct(product);
             return card;
         }
     }

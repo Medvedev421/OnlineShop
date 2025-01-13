@@ -12,7 +12,7 @@ namespace OnlineShop.ProductSelection.Cards
         public ProductCard()
         {
             InitializeComponent();
-            this.MouseDown += ProductCard_MouseDown; // Добавьте обработчик событий
+            this.MouseDown += ProductCard_MouseDown; 
         }
 
 
@@ -20,7 +20,6 @@ namespace OnlineShop.ProductSelection.Cards
         {
             if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
             {
-                // Запуск отображения полной информации
                 ((Views.MainWindow)Window.GetWindow(this)).ShowProductDetails(this);
             }
         }

@@ -10,14 +10,14 @@ namespace OnlineShop.ProductSelection.Views
 {
     public partial class MainWindow : MetroWindow
     {
-        private ProductManager productManager; // Объект для управления продуктами
+        private ProductManager productManager; 
         private Carts.Cart currentCart;
 
         public MainWindow()
         {
             InitializeComponent();
-            productManager = new ProductManager(ProductPanel); // Передаем панель для отображения товаров
-            productManager.ShowProductList(); // Отображать список товаров при загрузке
+            productManager = new ProductManager(ProductPanel); 
+            productManager.ShowProductList(); 
         }
         public ProductManager ProductManager
         {
@@ -36,7 +36,7 @@ namespace OnlineShop.ProductSelection.Views
         private void CartButton_Click(object sender, RoutedEventArgs e)
         {
             ProductPanel.Children.Clear();
-            var cart = GetCart(); // Получаем текущую корзину
+            var cart = GetCart(); 
             ProductPanel.Children.Add(cart);
         }
 
@@ -58,9 +58,8 @@ namespace OnlineShop.ProductSelection.Views
 
             if (sender is Button button)
             {
-                string category = button.Tag.ToString(); // Получаем категорию из тега кнопки
-
-                // Вызов методов добавления карточек в зависимости от категории
+                string category = button.Tag.ToString(); 
+                
                 switch (category)
                 {
                     case "Shoes":
@@ -87,14 +86,14 @@ namespace OnlineShop.ProductSelection.Views
 
         public void ShowProductDetails(ProductCard card)
         {
-            ProductPanel.Children.Clear(); // Очищаем панель товаров
+            ProductPanel.Children.Clear(); 
 
             var productDetails = new ProductDetails();
             productDetails.SetProduct(
-                card.ImagePath, // Укажите путь к изображению
+                card.ImagePath, 
                 card.ProductName.Text,
                 card.ProductPrice.Text,
-                new[] { "XS", "S", "M", "L", "XL" } // Укажите размеры
+                new[] { "XS", "S", "M", "L", "XL" } 
             );
 
             ProductPanel.Children.Add(productDetails);
@@ -105,19 +104,17 @@ namespace OnlineShop.ProductSelection.Views
             if (SearchBox == null) return;
             
             string searchText = SearchBox.Text.ToLower();
-            ProductPanel.Children.Clear(); // Убираем все текущие карточки
+            ProductPanel.Children.Clear(); 
             
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                // Если строка поиска пуста, вызываем метод, чтобы показать случайные товары
+                
                 productManager.ShowProductList();
                 return;
             }
             
-            // Набор для хранения уникальных карточек
             HashSet<string> addedProducts = new HashSet<string>();
-
-            // Ищем по всем доступным товарам
+            
             foreach (var product in productManager.GetAllAvailableProducts())
             {
                 if (product.Name.ToLower().Contains(searchText) && !addedProducts.Contains(product.Name))
@@ -130,34 +127,17 @@ namespace OnlineShop.ProductSelection.Views
                         .CreateProductCard();
 
                     ProductPanel.Children.Add(card);
-                    addedProducts.Add(product.Name); // Добавляем название продукта в набор, чтобы избежать дубликатов
+                    addedProducts.Add(product.Name);
                 }
             }
-
-            // Ищем по всем уже добавленным товарам
+            
             foreach (var product in productManager.GetAllProducts())
             {
                 if (product.ProductName.Text.ToLower().Contains(searchText) && !addedProducts.Contains(product.ProductName.Text))
                 {
                     ProductPanel.Children.Add(product);
-                    addedProducts.Add(product.ProductName.Text); // Добавляем название продукта в набор
+                    addedProducts.Add(product.ProductName.Text);
                 }
-            }
-        }
-
-        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (SearchBox.Text == "Поиск...")
-            {
-                SearchBox.Text = ""; // Очищаем текст при получении фокуса
-            }
-        }
-
-        private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(SearchBox.Text))
-            {
-                SearchBox.Text = "Поиск..."; // Восстанавливаем текст при потере фокуса
             }
         }
     }

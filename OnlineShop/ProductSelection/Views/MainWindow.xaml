@@ -10,7 +10,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="MainWindowStyles.xaml"/> <!-- Ваш файл стилей -->
+                <ResourceDictionary Source="MainWindowStyles.xaml"/> 
             </ResourceDictionary.MergedDictionaries>
 
             <Storyboard x:Key="ExpandMenuStoryboard">
@@ -29,25 +29,22 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>  <!-- Панель категорий -->
-            <ColumnDefinition Width="*"/>    <!-- Основное содержимое -->
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>   
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/> <!-- Для строки поиска -->
-            <RowDefinition Height="Auto"/> <!-- Для кнопки корзины -->
-            <RowDefinition Height="*"/>    <!-- Основное содержимое -->
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>    
         </Grid.RowDefinitions>
-
-        <!-- Панель для строки поиска -->
+        
         <Grid Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Border Style="{StaticResource SearchPanelStyle}">
                 <Grid>
                     <TextBox x:Name="SearchBox" Width="300" Margin="10" 
                              TextChanged="SearchBox_TextChanged" 
-                             Style="{StaticResource PlaceholderTextBoxStyle}" 
-                             GotFocus="SearchBox_GotFocus" 
-                             LostFocus="SearchBox_LostFocus"/>
+                             Style="{StaticResource PlaceholderTextBoxStyle}" />
                     <Image Source="pack://application:,,,/OnlineShop;component/ProductSelection/Resource/Lens/Lense.png" 
                            Width="20" 
                            Height="20" 
@@ -57,16 +54,14 @@
                 </Grid>
             </Border>
         </Grid>
-
-        <!-- Панель для кнопки корзины -->
+        
         <Grid Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
             <Button x:Name="CartButton" Width="35" Height="35"
                     Click="CartButton_Click" Background="Transparent" BorderBrush="Transparent">
                 <Image Source="pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png" Stretch="Uniform"/>
             </Button>
         </Grid>
-
-        <!-- Оберните StackPanel в Border для выдвижения -->
+        
         <Border x:Name="CategoryBorder" Width="30" Background="Transparent"
                 MouseEnter="CategoryPanel_MouseEnter" MouseLeave="CategoryPanel_MouseLeave"
                 VerticalAlignment="Stretch" Grid.RowSpan="3">
@@ -78,11 +73,10 @@
                 <Button Content="Футболки" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="T-Shirts"/>
             </StackPanel>
         </Border>
-
-        <!-- Область для отображения товаров -->
+        
         <ScrollViewer Grid.Column="1" Margin="10" Grid.Row="2">
             <WrapPanel x:Name="ProductPanel">
-                <!-- Здесь будут добавляться карточки товаров -->
+                
             </WrapPanel>
         </ScrollViewer>
     </Grid>
