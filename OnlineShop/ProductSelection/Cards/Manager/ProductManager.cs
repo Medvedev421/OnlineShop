@@ -39,14 +39,14 @@ namespace OnlineShop.ProductSelection.Managers
         
         private List<Cards.Product> allAvailableProducts = new List<Cards.Product>
         {
-            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Кроссовки", "400₽", "Shoes"),
-            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Ботинки", "800₽", "Shoes"),
-            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Джинсы", "1000₽", "Jeans"),
-            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Классические джинсы", "1200₽", "Jeans"),
-            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Куртка", "2500₽", "Jackets"),
-            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Легкая куртка", "2000₽", "Jackets"),
-            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Теплый свитер", "1500₽", "Sweaters"),
-            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/CartImage/Cart.png", "Футболка", "500₽", "T-Shirts"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/ShoesImage/Nike.png", "Nike Air Force 1", "14999₽", "Shoes"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/ShoesImage/Botinki3.png", "Ботинки зимние", "5830₽", "Shoes"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/JeansImage/Jeans2.png", "Широкие джинсы", "3488₽", "Jeans"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/JeansImage/JeansClassic.png", "Классические джинсы", "3200₽", "Jeans"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/JacketsImage/Nike.png", "Nike коротка куртка", "9999₽", "Jackets"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/JacketsImage/Jacket.png", "Легкая куртка", "5566₽", "Jackets"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/SweatersImage/Sweater.png", "Кофта оверсайз", "3499₽", "Sweaters"),
+            new Cards.Product("pack://application:,,,/OnlineShop;component/ProductSelection/Resource/T-ShirtsImage/Tshirt.png", "Футболка мужская", "1999₽", "T-Shirts"),
         };
 
         public void AddProductCard(string imagePath, string name, string price, string category)

@@ -88,6 +88,29 @@
     <ItemGroup>
       <Resource Include="ProductSelection\Resource\CartImage\Cart.png" />
       <None Remove="ProductSelection\Resource\JacketsImage\Snils.jpg" />
+      <None Remove="ProductSelection\Resource\ShoesImage\Nike.png" />
+      <Resource Include="ProductSelection\Resource\ShoesImage\Nike.png" />
+      <None Remove="ProductSelection\Resource\ShoesImage\Nike2.png" />
+      <None Remove="ProductSelection\Resource\ShoesImage\Botinki.png" />
+      <None Remove="ProductSelection\Resource\ShoesImage\Botinki2.jpg" />
+      <None Remove="ProductSelection\Resource\ShoesImage\Botinki3.png" />
+      <Resource Include="ProductSelection\Resource\ShoesImage\Botinki3.png" />
+      <None Remove="ProductSelection\Resource\JeansImage\Jeans.png" />
+      <None Remove="ProductSelection\Resource\JeansImage\Jeans2.png" />
+      <Resource Include="ProductSelection\Resource\JeansImage\Jeans2.png" />
+      <None Remove="ProductSelection\Resource\JeansImage\JeansClassic.png" />
+      <Resource Include="ProductSelection\Resource\JeansImage\JeansClassic.png" />
+      <None Remove="ProductSelection\Resource\JacketsImage\NikeJacket.png" />
+      <None Remove="ProductSelection\Resource\JacketsImage\Nikkke.png" />
+      <None Remove="ProductSelection\Resource\JacketsImage\Adidas.png" />
+      <None Remove="ProductSelection\Resource\JacketsImage\Jacket.png" />
+      <Resource Include="ProductSelection\Resource\JacketsImage\Jacket.png" />
+      <None Remove="ProductSelection\Resource\SweatersImage\Sweater.png" />
+      <Resource Include="ProductSelection\Resource\SweatersImage\Sweater.png" />
+      <None Remove="ProductSelection\Resource\T-ShirtsImage\Tshirt.png" />
+      <Resource Include="ProductSelection\Resource\T-ShirtsImage\Tshirt.png" />
+      <None Remove="ProductSelection\Resource\JacketsImage\Nike.png" />
+      <Resource Include="ProductSelection\Resource\JacketsImage\Nike.png" />
     </ItemGroup>
 
 </Project>
