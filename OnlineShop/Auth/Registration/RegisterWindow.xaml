@@ -21,18 +21,18 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Content="Username:" Grid.Row="0" Style="{StaticResource StyleText}"/> <!-- Применение стиля для Username -->
-        <TextBox x:Name="RegisterUsernameTextBox" Style="{StaticResource StyleTextBox}" Grid.Row="0" FontWeight="Bold"/> <!-- Жирный текст для ввода -->
+        <Label Content="Username:" Grid.Row="0" Style="{StaticResource StyleText}"/> 
+        <TextBox x:Name="RegisterUsernameTextBox" Style="{StaticResource StyleTextBox}" Grid.Row="0" FontWeight="Bold"/>
 
-        <Label Content="Password:" Grid.Row="1" Style="{StaticResource StyleText}"/> <!-- Применение стиля для Password -->
-        <PasswordBox x:Name="RegisterPasswordTextBox" Style="{StaticResource StylePasswordBox}" Grid.Row="1" FontWeight="Bold"/> <!-- Жирный текст для ввода -->
+        <Label Content="Password:" Grid.Row="1" Style="{StaticResource StyleText}"/> 
+        <PasswordBox x:Name="RegisterPasswordTextBox" Style="{StaticResource StylePasswordBox}" Grid.Row="1" FontWeight="Bold"/> 
 
-        <Label Content="Confirm Password:" Grid.Row="2" Style="{StaticResource StyleText}"/> <!-- Применение стиля для Confirm Password -->
-        <PasswordBox x:Name="ConfirmPasswordTextBox" Style="{StaticResource StylePasswordBox}" Grid.Row="2" FontWeight="Bold"/> <!-- Жирный текст для ввода -->
+        <Label Content="Confirm Password:" Grid.Row="2" Style="{StaticResource StyleText}"/> 
+        <PasswordBox x:Name="ConfirmPasswordTextBox" Style="{StaticResource StylePasswordBox}" Grid.Row="2" FontWeight="Bold"/>
 
         <StackPanel Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Content="Back" Click="BackButton_Click" Style="{StaticResource StyleButtonRegisterCancel}"/> <!-- Кнопка возврата -->
-            <Button Content="Register" Click="RegisterButton_Click" Style="{StaticResource StyleButtonRegisterConfirm}" /> <!-- Кнопка регистрации -->
+            <Button Content="Back" Click="BackButton_Click" Style="{StaticResource StyleButtonRegisterCancel}"/> 
+            <Button Content="Register" Click="RegisterButton_Click" Style="{StaticResource StyleButtonRegisterConfirm}" /> 
         </StackPanel>
 
         <TextBlock x:Name="MessageTextBlock" Grid.Row="4" Foreground="Red" />

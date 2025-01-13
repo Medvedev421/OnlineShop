@@ -18,7 +18,6 @@ namespace OnlineShop.Auth.Registration
         
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            // Обработка возврата на страницу входа
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
             this.Close();

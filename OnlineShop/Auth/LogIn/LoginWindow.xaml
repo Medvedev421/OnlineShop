@@ -25,10 +25,10 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Username:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleText}"/> <!-- Применение стиля для Username -->
+        <Label Content="Username:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleText}"/>
         <TextBox x:Name="UsernameTextBox" Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBox}"/>
 
-        <Label Content="Password:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleText}"/> <!-- Применение стиля для Password -->
+        <Label Content="Password:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleText}"/> 
         <PasswordBox x:Name="PasswordTextBox" Grid.Row="1" Grid.Column="1" Style="{StaticResource StylePasswordBox}"/>
 
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal">
